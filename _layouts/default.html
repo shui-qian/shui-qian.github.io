@@ -1,58 +1,78 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <!--
-    Basically Basic Jekyll Theme 1.4.2
-    Copyright 2017-2018 Michael Rose - mademistakes.com | @mmistakes
-    Free for personal and commercial use under the MIT license
-    https://github.com/mmistakes/jekyll-theme-basically-basic/blob/master/LICENSE
+Linear by TEMPLATED
+templated.co @templatedco
+Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
-<html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="no-js">
-  {% include head.html %}
+<html>
+<head>
+	<title>Linear by TEMPLATED</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="/assets/js/skel.min.js"></script>
+	<script src="/assets/js/skel-panels.min.js"></script>
+	<script src="/assets/js/init.js"></script>
+	<noscript>
+		<link rel="stylesheet" href="/assets/css/skel-noscript.css" />
+		<link rel="stylesheet" href="/assets/css/style.css" />
+		<link rel="stylesheet" href="/assets/css/style-desktop.css" />
+	</noscript>
+</head>
+<body>
 
-  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %} {{ page.title | slugify }}">
+	<!-- Header -->
+	<div id="header">
+		{% include nav.html %}
+		<div class="container">
 
-    {% include skip-links.html %}
+			<!-- Logo -->
+			<div id="logo">
+				<h1><a href="#">Linear</a></h1>
+				<span class="tag">By TEMPLATED</span>
+			</div>
+		</div>
+	</div>
+	<!-- Header -->
+	{{ content }}
+	
+	<!-- Tweet -->
+	<div id="tweet">
+		<div class="container">
+			<section>
+				<blockquote>&ldquo;In posuere eleifend odio. Quisque semper augue mattis wisi. Maecenas ligula. Pellentesque viverra vulputate enim. Aliquam erat volutpat.&rdquo;</blockquote>
+			</section>
+		</div>
+	</div>
 
-    <div class="sidebar-toggle-wrapper">
-      {% if site.search %}
-        <button class="search-toggle" type="button">
-          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
-            <title>{{ site.data.theme.t.search | default: 'Search' }}</title>
-            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
-          </svg>
-        </button>
-      {% endif %}
 
-      <button class="toggle navicon-button larr" type="button">
-        <span class="toggle-inner">
-          <span class="sidebar-toggle-label visually-hidden">{{ site.data.theme.t.menu | default: 'Menu' }}</span>
-          <span class="navicon"></span>
-        </span>
-      </button>
-    </div>
+<!-- Footer -->
+<div id="footer">
+	<div class="container">
+		<section>
+			<header>
+				<h2>Get in touch</h2>
+				<span class="byline">Integer sit amet pede vel arcu aliquet pretium</span>
+			</header>
+			<ul class="contact">
+				<li><a href="#" class="fa fa-twitter"><span>Twitter</span></a></li>
+				<li class="active"><a href="#" class="fa fa-facebook"><span>Facebook</span></a></li>
+				<li><a href="#" class="fa fa-dribbble"><span>Pinterest</span></a></li>
+				<li><a href="#" class="fa fa-tumblr"><span>Google+</span></a></li>
+			</ul>
+		</section>
+	</div>
+</div>
 
-    <div id="sidebar" class="sidebar">
-      <div class="inner">
-        {% include navigation.html %}
-        {% include contact-list.html %}
-      </div>
-    </div>
+<!-- Copyright -->
+<div id="copyright">
+	<div class="container">
+		Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
+		Jekyll Template: <a href="http://cloudcannon.com">Cloud Cannon</a>
+	</div>
+</div>
 
-    <div class="canvas">
-      <div class="wrapper">
-        {% include masthead.html %}
-        <div class="initial-content">
-          {{ content }}
-        </div>
-
-        <div class="search-content">
-          {% include search-form.html %}
-        </div>
-      </div>
-    </div>
-
-    {% include footer.html %}
-    {% include scripts.html %}
-
-  </body>
-
+</body>
 </html>
