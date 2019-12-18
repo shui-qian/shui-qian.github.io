@@ -1,10 +1,269 @@
-<!doctype>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>layui</title>
-		<body>
-			欢迎来到 我的博客
-		</body>
-	</head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>首页</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+  <link rel="stylesheet" href="res/css/index.css">
+  <style type="text/css">
+  #url-content{
+	  padding: 0px;
+	  height: calc(100% - 42px);
+  }
+  	#tag-main{
+  		border: 0px solid red;
+  		height: 40px;
+    	line-height: 40px;
+    	padding: 0 0 0 40px;
+    	box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+  	}
+  	#tag-items-div{
+  		width: calc(100% - 83px);
+	    height: 100%;
+	    overflow: hidden;
+	    white-space: nowrap;
+	    font-size: 0; /* 解决inline-block间距，父标签font-size = 0,子标签指定font-size */
+  	}
+  	.tool-btn{
+  		border-left: 1px solid #f6f6f6;
+  		border-right: 1px solid #f6f6f6;
+	    position: absolute;
+	    width: 40px;
+	    height: 40px;
+	    text-align: center;
+	    cursor: pointer;
+	    background: #ffffff;
+	    top: 0px;
+  	}
+  	.tool-btn:hover{
+  		background: #f6f6f6;
+  	}
+  	.tag-item{
+  		border-right: 1px solid #f6f6f6;
+	    display: inline-block;
+	    text-align: center;
+	    cursor: pointer;
+	    font-size: 14px;
+	    min-width: 50px;
+	    max-width: 160px;
+	    padding: 0 5px 0px 5px;
+  	}
+  	.tag-choose{
+  		background: #e8e5e5;
+  	}
+  	.tag-item:hover{
+  		background: #f6f6f6;
+  	}
+  	.tag-close{
+  	    padding: 0px;
+	    border-radius: 13px;
+	    margin-left: 8px;
+  	}
+  	.tag-close:hover{
+  		background: #ff4700;
+    	color: #ffffff;
+  	}
+  	#ifrs_main{
+  		width:  100%;
+  		height: 100%;
+  	}
+  	.html-ifr{
+  		width:  100%;
+  		height: 100%;
+  		border: none;
+  		padding-top: 2px;
+  	}
+  </style>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <!-- <div class="layui-logo">SQ 任务管理</div> -->
+    <div class="layui-logo"><img alt="SQ 任务管理" src="logo.png" width="80px" height="70px"></div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item"><a href="">控制台</a></li>
+      <li class="layui-nav-item"><a href="">商品管理</a></li>
+      <li class="layui-nav-item"><a href="">用户</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">其它系统</a>
+        <dl class="layui-nav-child">
+          <dd><a href="">邮件管理</a></dd>
+          <dd><a href="">消息管理</a></dd>
+          <dd><a href="">授权管理</a></dd>
+        </dl>
+      </li>
+    </ul>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item"><a href="javascript:;">通知9</a></li>
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          <img src="http://t.cn/RCzsdCq" class="layui-nav-img">水浅
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="">基本资料</a></dd>
+          <dd><a href="">安全设置</a></dd>
+        </dl>
+      </li>
+      <li class="layui-nav-item"><a href="#">退了</a></li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;">任务管理</a>
+          <dl class="layui-nav-child">
+          	<dd><a class="nav-item" data-urlid="1" href="javascript:;" data-url="https://www.baidu.com">公共白板</a></dd>
+          	<dd><a class="nav-item" data-urlid="2" href="javascript:;" data-url="https://www.taobao.com">团队   项目管理</a></dd>
+            <dd><a class="nav-item" data-urlid="3" href="javascript:;" data-url="https://www.w3school.com.cn">需求   bug   问题</a></dd>
+            <dd><a class="nav-item" data-urlid="4" href="javascript:;" data-url="https://www.bilibili.com">任务   处理进度</a></dd>
+            <dd><a class="nav-item" data-urlid="5" href="javascript:;">时间   日历   日程</a></dd>
+            <dd><a href="javascript:;">任务报表</a></dd>
+            <dd><a href="javascript:;">功能发布时间轴</a></dd>
+            <dd><a href="">超链接</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">文档管理</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">文章管理</a></dd>
+            <dd><a href="javascript:;">日志管理</a></dd>
+            <dd><a href="javascript:;">项目资料</a></dd>
+            <dd><a href="">超链接</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item"><a href="">云市场</a></li>
+        <li class="layui-nav-item"><a href="">发布商品</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <div id="url-content">
+    	<!-- 标签栏 -->
+   	  <div id="tag-main">
+    	<div class="tool-btn" style="left: 0px;" data-direction="left"><a class="layui-icon layui-icon-prev" href="javascript:;"></a></div>
+    	<div id="tag-items-div">
+    	  <div class="tag-item"><span class="layui-icon layui-icon-home"></span></div>
+	    	<!-- <div class="tag-item"><span>团队白板</span><i class="tag-close layui-icon layui-icon-close"></i></div>
+	    	<div class="tag-item"><span>订单管理</span><i class="tag-close layui-icon layui-icon-close"></i></div>
+	      	<div class="tag-item"><span>团队白板</span><i class="tag-close layui-icon layui-icon-close"></i></div>
+	    	<div class="tag-item"><span>订单管理</span><i class="tag-close layui-icon layui-icon-close"></i></div>
+	    	<div class="tag-item"><span>团队白板</span><i class="tag-close layui-icon layui-icon-close"></i></div>
+	    	<div class="tag-item"><span>订单管理</span><i class="tag-close layui-icon layui-icon-close"></i></div>
+	    	<div class="tag-item"><span>团队白板</span><i class="tag-close layui-icon layui-icon-close"></i></div>
+	    	<div class="tag-item"><span>订单管理</span><i class="tag-close layui-icon layui-icon-close"></i></div>
+	    	<div class="tag-item"><span>团队白板</span><i class="tag-close layui-icon layui-icon-close"></i></div>
+	    	<div class="tag-item"><span>订单管理</span><i class="tag-close layui-icon layui-icon-close"></i></div>
+	    	<div class="tag-item"><span>团队白板</span><i class="tag-close layui-icon layui-icon-close"></i></div>
+	    	<div class="tag-item"><span>订单管理</span><i class="tag-close layui-icon layui-icon-close"></i></div>
+	    	<div class="tag-item"><span>团队白板</span><i class="tag-close layui-icon layui-icon-close"></i></div>
+	    	<div class="tag-item"><span>订单管理</span><i class="tag-close layui-icon layui-icon-close"></i></div> -->
+    	</div>
+      	<div class="tool-btn" style="right: 41px;" data-direction="right"><i class="layui-icon layui-icon-next"></i></div>
+     	<div class="tool-btn" style="right: 0px;"><i class="layui-icon layui-icon-down"></i></div>
+      </div>
+      <!-- 标签网页内容 -->
+      <div id="ifrs_main">
+    		<iframe class="html-ifr" src="http://www.baidu.com"></iframe>
+      </div>
+    </div>
+  </div>
+  
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    © layui.com - 底部固定区域
+  </div>
+</div>
+<script src="layui/layui.js"></script>
+<script src="res/jquery-1.9.1.min.js"></script>
+<script>
+$(function(){
+	layui.use('element', function(){
+		  var element = layui.element;
+		});
+	
+	dirTag();
+	
+	tagClose();
+	
+	tagClick();
+	
+	navClick();
+})
+
+// 滚动标签
+function dirTag(){
+	$('.tool-btn').click(function(){
+		var dir = $(this).data('direction');
+		if(dir == 'left'){
+			$("#tag-items-div").animate({scrollLeft: $("#tag-items-div").scrollLeft() - 500});
+		}else if(dir == 'right'){
+			$("#tag-items-div").animate({scrollLeft: $("#tag-items-div").scrollLeft() + 500});
+		};
+	});
+}
+
+function tagClose(){
+	$('.tag-close').unbind('click');
+	$('.tag-close').click(function(){
+		var real_ele = $(this).parent();
+		real_ele.fadeOut(function(){ //淡出效果隐藏
+			real_ele.remove();
+		});
+		var ifrid = '#'+real_ele.data('ifrid')
+		$(ifrid).fadeOut(function(){
+			$(ifrid).remove();
+		});
+		
+		// 删除了选中标签
+		var taging = '#' + $('.tag-choose').data('ifrid');
+		if(taging == ifrid){
+			if($(real_ele).next().length > 0){
+				$(real_ele).next().click();
+			}else{
+				$(real_ele).prev().click();
+			}
+		}
+		event.stopPropagation();
+	});
+}
+
+function tagClick(){
+	$('.tag-item').unbind('click');
+	$('.tag-item').click(function(){
+		$(this).addClass('tag-choose').siblings().removeClass('tag-choose');;
+		//$('.html-ifr').slideUp();
+		$('.html-ifr').hide();
+		var tag_id ='#' + $(this).data('ifrid');
+		$(tag_id).fadeIn();
+		//$('#ifrs_main').append('<iframe class="html-ifr taghtml'+tag_id+'" src="http://www.baidu.com"></iframe>');
+	});
+}
+
+function navClick(){
+	$('.nav-item').click(function(){
+		var nav_url = $(this).data('url');
+		var url_id = $(this).data('urlid');
+		// 是否存在
+		if($('#itag'+url_id).length > 0){
+			$('#itag'+url_id).click();
+			return;
+		}
+		$('#tag-items-div').append('<div id="itag'+url_id+'" class="tag-item" data-ifrid="taghtml'+url_id+'"><span>'+$(this).text()+'</span><i class="tag-close layui-icon layui-icon-close"></i></div>');
+		tagClick(); //刷新标签点击事件
+		$('#itag'+url_id).click();//直接选中获取样式
+		$('.html-ifr').hide();
+		$('#ifrs_main').append('<iframe class="html-ifr" id="taghtml'+url_id+'" src="'+nav_url+'"></iframe>');
+		tagClose();
+	});
+}
+
+</script>
+</body>
 </html>
